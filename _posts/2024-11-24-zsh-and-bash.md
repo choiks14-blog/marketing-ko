@@ -1,5 +1,5 @@
 ---
-title: 1Customize the Favicon
+title: zsh and bash 비교 
 author: cotes
 date: 2024-08-11 00:34:00 +0800
 categories: [Blogging, Tutorial]
