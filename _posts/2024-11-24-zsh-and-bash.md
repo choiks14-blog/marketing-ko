@@ -1,9 +1,9 @@
 ---
 title: zsh and bash 비교 
 author: cotes
-date: 2024-08-11 00:34:00 +0800
+date: 2024-11-24 00:34:00 +0900
 categories: [Blogging, Tutorial]
-tags: [favicon]
+tags: [zsh,linux,mac]
 comment: true
 ---
 
