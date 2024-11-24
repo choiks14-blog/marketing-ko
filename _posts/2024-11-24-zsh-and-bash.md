@@ -1,6 +1,6 @@
 ---
 title: zsh and bash 비교 
-author: cotes
+author: alpa28980
 date: 2024-11-24 00:34:00 +0900
 categories: [Blogging, Tutorial]
 tags: [zsh,linux,mac]
@@ -49,4 +49,8 @@ Zsh의 장점은 강력하고 유연한 기능, 뛰어난 확장성, 높은 사�
 사용 상황에 따라 적절한 셸을 선택하는 것이 중요합니다. 일반적인 대화형 사용이나 간단한 스크립팅 작업에는 Bash를 추천합니다. 반면 강력한 기능과 확장성이 필요하거나 복잡한 스크립팅, 다중 작업 환경에서는 Zsh를 권장합니다. 또한 리소스가 제한적인 저사양 시스템에서는 Bash를 사용하는 것이 효율적일 것입니다 2 .
 
 
+---
+
 <iframe src="https://ads-partners.coupang.com/widgets.html?id=807239&template=carousel&trackingCode=AF3190673&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+해당 링크를 통해 제품 구매가 이루어진 경우 쿠팡 파트너스 활동 일환으로 인해 일정 수수료가 블로거에게 제공되고 있습니다
+
