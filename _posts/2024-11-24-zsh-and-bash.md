@@ -47,3 +47,6 @@ Zsh와 Bash 셸은 기능과 성능 측면에서 상당한 차이점을 보입�
 Zsh의 장점은 강력하고 유연한 기능, 뛰어난 확장성, 높은 사용자 편의성입니다. 반면 단점으로는 느린 시작 시간과 높은 메모리 사용량을 들 수 있습니다. Bash는 가볍고 빠르며 POSIX 호환성이 높다는 장점이 있지만, 기능이 제한적이고 확장성이 부족하다는 단점이 있습니다.
 
 사용 상황에 따라 적절한 셸을 선택하는 것이 중요합니다. 일반적인 대화형 사용이나 간단한 스크립팅 작업에는 Bash를 추천합니다. 반면 강력한 기능과 확장성이 필요하거나 복잡한 스크립팅, 다중 작업 환경에서는 Zsh를 권장합니다. 또한 리소스가 제한적인 저사양 시스템에서는 Bash를 사용하는 것이 효율적일 것입니다 2 .
+
+
+<iframe src="https://ads-partners.coupang.com/widgets.html?id=807239&template=carousel&trackingCode=AF3190673&subId=&width=680&height=140&tsource=" width="680" height="140" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
