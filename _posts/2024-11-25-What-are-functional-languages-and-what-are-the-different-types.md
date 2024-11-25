@@ -1,68 +1,68 @@
 ---
-title: 함수형 언어란 무엇이며 종류는 어떤것이 있는가?
+title: What are functional languages and what are the different types?
 author: alpa28980
-date: Mon, 25 Nov 2024 04:43:20 GMT
-categories: ["개발언어"]
-tags: ["함수형언어"]
+date: Mon, 25 Nov 2024 04:47:46 GMT
+categories: ["Development Language"]
+tags: ["Functional Languages"]
 comment: true
 ---
-서론
---
+Introduction.
 
-함수형 프로그래밍은 순수 함수를 기반으로 하는 프로그래밍 패러다임입니다. 순수 함수는 외부 상태에 의존하지 않고 동일한 입력에 대해 항상 같은 출력을 내는 함수를 말합니다. 함수형 프로그래밍에서는 변수 값의 변경이 불가능한 불변성(Immutability)을 따르며, 함수 자체를 변수로 취급하고 다른 함수의 인자로 전달할 수 있는 고차 함수(Higher-order Function)를 활용합니다. 
 
-절차지향/객체지향 프로그래밍과 비교했을 때, 함수형 프로그래밍은 추상화 수준이 높아 코드 리딩이 어렵지만, 기존 자료구조를 크게 변경할 필요가 없습니다. 또한 함수형 언어는 대중성이 낮은 편입니다. 하지만 함수형 프로그래밍은 불변성으로 인해 병렬 처리와 테스트/디버깅이 용이한 장점이 있습니다. 
+Functional programming is a programming paradigm based on pure functions. A pure function is a function that does not depend on external state and always produces the same output for the same input. Functional programming enforces immutability, where the values of variables cannot change, and utilizes higher-order functions, where functions themselves are treated as variables and can be passed as arguments to other functions.
 
-함수형 프로그래밍은 순수 함수, 불변성, 고차 함수 등의 핵심 개념을 통해 병렬 처리와 디버깅 측면에서 강점이 있지만, 상대적으로 낮은 대중성과 높은 추상화 수준은 단점으로 지적됩니다. 
+Compared to procedural/object-oriented programming, functional programming has a higher level of abstraction, making it harder to read code, but it doesn't require significant changes to existing data structures. Functional languages are also less popular. However, functional programming has the advantage of being easy to parallelize and test/debug due to its immutability.
 
-불변성
----
+Functional programming has strengths in parallelism and debugging through key concepts such as pure functions, immutability, and higher-order functions, but its relative lack of popularity and high level of abstraction are noted as drawbacks.
 
-함수형 프로그래밍에서 불변성(Immutability)은 핵심 개념입니다. 불변성이란 한번 정의된 값은 변경할 수 없다는 것을 의미합니다. 기존 값을 변경하는 대신, 새로운 값을 생성해야 합니다. 이를 위해 destructive update 대신 persistent data structure를 사용합니다. 
+Immutability.
+---.
 
-불변성은 다음과 같은 장점이 있습니다:
+Immutability is a key concept in functional programming. Immutability means that once a value is defined, it cannot be changed. Instead of changing an existing value, a new value should be created. To achieve this, we use persistent data structures instead of destructive updates.
 
-1.  병렬 처리가 용이합니다. 데이터가 변경되지 않으므로 스레드 안전성이 보장되어 병렬 처리가 쉽습니다. 
-2.  참조 투명성이 보장됩니다. 함수의 결과가 외부 상태에 영향을 받지 않습니다. 
-3.  디버깅이 용이합니다. 데이터 변경이 없으므로 상태 추적이 쉽습니다. 
+Immutability has the following advantages
 
-불변 데이터 구조의 예시로는 Linked List, Vector, HashMap 등이 있습니다. 일반적으로 새로운 노드나 배열을 생성하여 기존 데이터를 유지하면서 변경 사항을 반영합니다. 
+1. It facilitates parallelism. Since the data doesn't change, it's thread-safe and easy to parallelize.
+2. Referential transparency is guaranteed. The result of a function is not affected by external state.
+3. Easy to debug. Easy to trace state because no data changes.
 
-순수 함수
+Examples of immutable data structures include Linked List, Vector, and HashMap. They typically reflect changes by creating new nodes or arrays to preserve the existing data.
+
+Pure functions
 -----
 
-순수 함수(Pure Function)는 함수형 프로그래밍의 핵심 개념으로, 외부 상태에 의존하지 않고 입력이 같으면 항상 같은 출력을 내는 함수입니다. 순수 함수는 부작용(Side Effect)이 없어 프로그램의 상태를 변경하지 않습니다. 이로 인해 병렬 프로그래밍이 용이해지는데, 동시에 여러 스레드에서 순수 함수를 호출해도 안전하기 때문입니다. 
+A pure function is a key concept in functional programming: a function that does not depend on external state and always produces the same output for the same input. Pure functions have no side effects, meaning they don't change the state of the program. This facilitates parallel programming because it's safe to call pure functions from multiple threads at the same time.
 
-또한 순수 함수는 입력이 같으면 출력이 항상 같아 메모이제이션(Memoization)이 가능합니다. 이전 계산 결과를 저장해두고 재활용함으로써 성능을 높일 수 있습니다. 반면에 부작용이 있는 함수는 외부 상태에 따라 출력이 달라지므로 메모이제이션이 어렵습니다. 4 예를 들어 피보나치 수열을 계산하는 재귀 함수에 메모이제이션을 적용하면 시간 복잡도가 지수 시간에서 선형 시간으로 개선됩니다.
+Pure functions are also memoizable, meaning that for the same input, the output is always the same. You can increase performance by storing and recycling the results of previous computations. Functions with side effects, on the other hand, are harder to memoize because their output depends on external state. 4 For example, applying memoization to a recursive function that computes the Fibonacci sequence improves its time complexity from exponential to linear time.
 
-순수 함수의 또 다른 장점은 테스트와 디버깅이 용이하다는 점입니다. 외부 상태에 영향을 받지 않기 때문에 함수의 동작을 격리하여 검증할 수 있습니다. 따라서 버그를 찾고 수정하기가 쉬워집니다. 반면 부작용이 있는 함수는 외부 상태에 의존하므로 테스트하기 어려워집니다. 이처럼 순수 함수는 병렬 프로그래밍, 성능 최적화, 테스트 등 다양한 측면에서 이점을 제공합니다. 
+Another advantage of pure functions is that they are easy to test and debug. Because they don't depend on external state, the behavior of a function can be verified in isolation, making it easier to find and fix bugs. On the other hand, functions with side effects depend on external state, which makes them harder to test. As you can see, pure functions are beneficial in many ways, including parallel programming, performance optimization, and testing.
 
-함수 합성
+Function synthesis
 -----
 
-함수 합성(Function Composition)은 두 개 이상의 함수를 조합하여 새로운 함수를 만드는 것을 의미합니다. 이를 위해서는 고차 함수(Higher-Order Function)가 활용됩니다. 고차 함수란 함수를 인자로 받거나 반환하는 함수를 말합니다. 
+Function Composition means combining two or more functions to create a new function. This is accomplished by utilizing a Higher-Order Function. A higher-order function is a function that takes or returns a function as an argument.
 
-함수 합성을 통해 복잡한 작업을 작은 단위의 함수로 나누어 해결할 수 있습니다. 또한 불변성과 순수 함수의 특성으로 인해 합성된 함수의 동작을 예측하기 쉽고, 테스트와 디버깅도 용이해집니다.  마지막으로 함수 합성은 코드의 모듈성과 재사용성을 높여 생산성 향상에도 기여합니다.
+Function synthesis allows you to solve complex tasks by breaking them down into smaller functions. The behavior of synthesized functions is also easier to predict and easier to test and debug due to the immutability and pure nature of functions.  Finally, function synthesis also contributes to productivity by making your code more modular and reusable.
 
-함수형 프로그래밍에서 함수 합성은 매우 중요한 개념입니다. 작은 단위의 함수를 조합하여 복잡한 문제를 해결할 수 있으며, 코드의 가독성과 테스트 용이성 등 다양한 장점을 제공합니다. 따라서 함수 합성은 함수형 프로그래밍의 핵심 원리 중 하나라고 볼 수 있습니다.
+Function synthesis is a very important concept in functional programming. It allows you to combine smaller functions to solve complex problems, and it has many benefits, including making your code more readable and easier to test. As such, function compositing is one of the core principles of functional programming.
 
-주요 함수형 언어
+Major functional languages
 ---------
 
-주요 함수형 프로그래밍 언어로는 Lisp, Haskell, Erlang, Scala 등이 있습니다.
+Major functional programming languages include Lisp, Haskell, Erlang, and Scala.
 
-Lisp는 1958년 개발된 가장 오래된 함수형 언어로, 기호 데이터 처리에 적합합니다. 인공지능, 컴파일러 등의 분야에서 많이 활용되고 있습니다. 
+Lisp is the oldest functional language, developed in 1958, and is well suited for symbolic data processing. It is widely used in fields such as artificial intelligence and compilers.
 
-Haskell은 1990년대 말 개발된 순수 함수형 언어로, 정적 타입 시스템과 타입 추론 기능이 있습니다. 강력한 타입 시스템과 병렬 프로그래밍 지원 등의 특징이 있으며, 금융, 과학 분야에서 활용되고 있습니다. 
+Haskell is a purely functional language developed in the late 1990s, with a static type system and type inference. It has a strong type system and support for parallel programming, and is used in finance and science.
 
-Erlang은 1986년 에릭슨 전화교환기 개발을 위해 만들어진 언어로, 분산 시스템과 병렬 프로그래밍에 특화되어 있습니다. 높은 내결함성과 핫스왑 기능으로 유명하며, 통신, 금융 시스템 등에 활용됩니다. 
+Erlang was created in 1986 to develop Ericsson telephone exchanges and specializes in distributed systems and parallel programming. It is known for its high fault tolerance and hot-swappability, and is used in telecommunications, financial systems, and more.
 
-Scala는 2000년대 초반 개발된 멀티 패러다임 언어로, 함수형과 객체지향 프로그래밍을 모두 지원합니다. JVM 기반으로 자바와의 상호운용성이 뛰어나며, 빅데이터 처리, 웹 개발 등 다양한 분야에서 사용됩니다. 
+Scala is a multi-paradigm language developed in the early 2000s that supports both functional and object-oriented programming. It is JVM-based, highly interoperable with Java, and is used in a variety of fields, including big data processing and web development.
 
-결론
---
+Conclusion.
+--.
 
-함수형 프로그래밍은 불변성과 순수 함수를 기반으로 병렬/동시성 프로그래밍과 디버깅, 유닛 테스트에 유리합니다. 고차 함수와 함수 합성을 통해 간결하고 재사용 가능한 코드를 작성할 수 있으며, 메모이제이션, 지연 평가 등 다양한 최적화 기법을 활용할 수 있습니다. 하지만 높은 추상화 수준으로 인해 배우기 어렵고 생산성이 낮을 수 있으며, 기존 자료구조를 persistent data structure로 변경해야 하는 부담이 있습니다. 또한 순수 함수형 언어의 대중성이 낮아 활용 분야가 제한적이며, 값 변경 시 새 메모리 할당으로 인한 성능 저하와 가비지 컬렉션 오버헤드가 발생할 수 있습니다. 그러나 멀티코어 CPU와 분산 시스템 환경에서 함수형 프로그래밍의 장점이 부각될 것으로 보이며, 빅데이터, 머신러닝, 웹 개발 등 다양한 분야에서 활용도가 높아질 전망입니다. 비록 완전한 주류 패러다임으로 자리잡기에는 어려움이 있지만, 기존 언어에 점차 함수형 기능이 도입되고 있습니다.
+Functional programming is based on immutability and pure functions, which is advantageous for parallel and concurrent programming, debugging, and unit testing. Higher-order functions and function synthesis allow you to write concise and reusable code, and you can take advantage of various optimization techniques such as memoization and lazy evaluation. However, the high level of abstraction can make it difficult to learn and less productive, and the burden of changing existing data structures to persistent ones can be daunting. The lack of popularity of purely functional languages also limits their use, and changing values can cause performance degradation and garbage collection overhead due to new memory allocations. However, the advantages of functional programming are likely to become more prominent in multi-core CPUs and distributed systems, and it is expected to be used in a variety of fields, including big data, machine learning, and web development. Functional features are gradually being introduced into existing languages, although they are far from becoming a fully mainstream paradigm.
 ---
 ---
 
